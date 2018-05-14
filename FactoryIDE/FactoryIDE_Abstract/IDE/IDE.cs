@@ -12,7 +12,7 @@ namespace FactoryIDE_Abstract.IDE {
     public abstract class IDE {
 
         public List<UIElement> Elements { get; set; }
-        public abstract UIElementFactory ElementFactory { get; protected set; }
+        public abstract IUIElementFactory ElementFactory { get; protected set; }
 
         protected IDE() {
             Elements = new List<UIElement>();

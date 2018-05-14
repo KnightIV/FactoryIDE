@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\UIElementFactory.cs" />
+    <Compile Include="Factories\IUIElementFactory.cs" />
     <Compile Include="IDE\IDE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIElements\UIButton.cs" />

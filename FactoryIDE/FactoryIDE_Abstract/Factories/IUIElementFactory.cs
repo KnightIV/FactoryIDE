@@ -9,7 +9,7 @@ using FactoryIDE_Abstract.UIElements;
 
 namespace FactoryIDE_Abstract.Factories {
 
-    public interface UIElementFactory {
+    public interface IUIElementFactory {
 
         UIButton CreateUIButton(string content, int height, int width, int top, int left);
         UILabel CreateUILabel(string content, int height, int width, int top, int left);
