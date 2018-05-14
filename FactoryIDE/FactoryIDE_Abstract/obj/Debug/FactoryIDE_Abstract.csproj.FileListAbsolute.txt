@@ -1,0 +1,6 @@
+C:\Users\Jamila\FactoryIDE\FactoryIDE\FactoryIDE_Abstract\bin\Debug\FactoryIDE_Abstract.dll
+C:\Users\Jamila\FactoryIDE\FactoryIDE\FactoryIDE_Abstract\bin\Debug\FactoryIDE_Abstract.pdb
+C:\Users\Jamila\FactoryIDE\FactoryIDE\FactoryIDE_Abstract\obj\Debug\FactoryIDE_Abstract.csprojAssemblyReference.cache
+C:\Users\Jamila\FactoryIDE\FactoryIDE\FactoryIDE_Abstract\obj\Debug\FactoryIDE_Abstract.csproj.CoreCompileInputs.cache
+C:\Users\Jamila\FactoryIDE\FactoryIDE\FactoryIDE_Abstract\obj\Debug\FactoryIDE_Abstract.dll
+C:\Users\Jamila\FactoryIDE\FactoryIDE\FactoryIDE_Abstract\obj\Debug\FactoryIDE_Abstract.pdb

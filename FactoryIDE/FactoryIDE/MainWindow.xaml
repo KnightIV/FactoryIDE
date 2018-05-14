@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ComboBox Text="Language Selection" IsEditable="True" IsReadOnly="True" Name="LanguageDropDownMenu" Margin="277,159,269,213">
+            <ComboBoxItem Name="WPFLanguage" >WPF</ComboBoxItem>
+            <ComboBoxItem Name="HTMLLanguage">HTML</ComboBoxItem>
+        </ComboBox>
+
+        <Button Name="SelectionButton" Visibility="Visible" Height="50" Margin="313,242,307,127" Content="Select" Click="SelectionButton_Click"/>
     </Grid>
 </Window>

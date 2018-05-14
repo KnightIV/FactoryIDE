@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FactoryIDE_Abstract.IDE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace FactoryIDE
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void SelectionButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService nav = NavigationService.GetNavigationService(this);
+
+            string menu = LanguageDropDownMenu.Text;
+            if (menu == "WPF")
+            {
+                nav.Navigate(new IDEPage(null));
+            }
+            else if (menu == "HTML")
+            {
+                nav.Navigate(new IDEPage(null));
+            }
         }
     }
 }

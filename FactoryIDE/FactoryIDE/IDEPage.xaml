@@ -1,0 +1,26 @@
+﻿<Page x:Class="FactoryIDE.IDEPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FactoryIDE"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="IDEPage">
+
+    <Grid Background="White">
+        <ComboBox Text="Select Component" Name="ComponentSelector" IsReadOnly="True" IsEditable="True" VerticalAlignment="Top" Margin="37,63,583,0" Height="32" Grid.Column="1">
+            <ComboBoxItem Name="UIButton">Button</ComboBoxItem>
+            <ComboBoxItem Name="UILabel">Label</ComboBoxItem>
+            <ComboBoxItem Name="UIRectangle">Rectangle</ComboBoxItem>
+            <ComboBoxItem Name="UITextBox">Text Box</ComboBoxItem>
+        </ComboBox>
+
+        <Label Name="Content" HorizontalContentAlignment="Right" Height="25" Width="60" Margin="408,6,324,388">Contents</Label>
+
+        <ListBox Name="ComponentListBox" Margin="408,31,71,49" >
+            <ListBoxItem Name="Button"></ListBoxItem>
+        </ListBox>
+
+    </Grid>
+</Page>
