@@ -66,9 +66,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FactoryImplementations\HTMLElementFactory.cs" />
+    <Compile Include="FactoryImplementations\WPFElementFactory.cs" />
     <Compile Include="IDEPage.xaml.cs">
       <DependentUpon>IDEPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IDE_Implementations\HTML_IDE.cs" />
+    <Compile Include="IDE_Implementations\WPF_IDE.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -106,5 +110,6 @@
       <Name>FactoryIDE_Abstract</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

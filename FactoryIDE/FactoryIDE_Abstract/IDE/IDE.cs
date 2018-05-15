@@ -12,10 +12,11 @@ namespace FactoryIDE_Abstract.IDE {
     public abstract class IDE {
 
         public List<UIElement> Elements { get; set; }
-        public abstract IUIElementFactory ElementFactory { get; protected set; }
+        public IUIElementFactory ElementFactory { get; protected set; }
 
         protected IDE() {
             Elements = new List<UIElement>();
+            ElementFactory = CreateFactory();
         }
 
         public void AddButton(string content, int height, int width, int top, int left) => Elements.Add(ElementFactory.CreateUIButton(content, height, width, top, left));
@@ -27,5 +28,6 @@ namespace FactoryIDE_Abstract.IDE {
         public void AddRectangle(string content, int height, int width, int top, int left) => Elements.Add(ElementFactory.CreateUIRectangle(content, height, width, top, left));
 
         public abstract void Compile(string fileName);
+        public abstract IUIElementFactory CreateFactory();
     }
 }
