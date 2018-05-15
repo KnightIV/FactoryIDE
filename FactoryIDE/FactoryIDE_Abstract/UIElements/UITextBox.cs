@@ -6,5 +6,11 @@ using System.Threading.Tasks;
 
 namespace FactoryIDE_Abstract.UIElements {
 
-    public abstract class UITextBox : UIElement {}
+    public abstract class UITextBox : UIElement {
+
+        public override string ToString()
+        {
+            return "TextBox(text, width, height)";
+        }
+    }
 }

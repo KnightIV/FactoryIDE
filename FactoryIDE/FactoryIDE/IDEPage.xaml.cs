@@ -21,11 +21,11 @@ namespace FactoryIDE
     /// </summary>
     public partial class IDEPage : Page
     {
-        public IDE pageContent{ get; set; }
-        public IDEPage(IDE PageContent)
+        public IDE PageContent{ get; set; }
+        public IDEPage(IDE pageContent)
         {
             InitializeComponent();
-            pageContent = PageContent;
+            PageContent = pageContent;
         }
 
 

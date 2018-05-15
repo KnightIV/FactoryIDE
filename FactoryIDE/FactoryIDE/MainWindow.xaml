@@ -12,6 +12,10 @@
             <ComboBoxItem Name="HTMLLanguage">HTML</ComboBoxItem>
         </ComboBox>
 
+        <DockPanel>
+            <Frame x:Name="nav" NavigationUIVisibility="Hidden"/>
+        </DockPanel>
+
         <Button Name="SelectionButton" Visibility="Visible" Height="50" Margin="313,242,307,127" Content="Select" Click="SelectionButton_Click"/>
     </Grid>
 </Window>

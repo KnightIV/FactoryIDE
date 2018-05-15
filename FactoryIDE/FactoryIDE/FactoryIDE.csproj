@@ -54,6 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UIElements\UIHTMLButton.cs" />
+    <Compile Include="UIElements\UIHTMLLabel.cs" />
+    <Compile Include="UIElements\UIHTMLRectangle.cs" />
+    <Compile Include="UIElements\UIHTMLTextBox.cs" />
+    <Compile Include="UIElements\UIWPFButton.cs" />
+    <Compile Include="UIElements\UIWPFTextBox.cs" />
     <Page Include="IDEPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FactoryIDE.IDE_Implementations;
 
 namespace FactoryIDE
 {
@@ -29,16 +30,16 @@ namespace FactoryIDE
 
         private void SelectionButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService nav = NavigationService.GetNavigationService(this);
+            //NavigationService nav = NavigationService.GetNavigationService(this);
 
             string menu = LanguageDropDownMenu.Text;
             if (menu == "WPF")
             {
-                nav.Navigate(new IDEPage(null));
+                nav.Navigate(new IDEPage(new WPF_IDE()));
             }
             else if (menu == "HTML")
             {
-                nav.Navigate(new IDEPage(null));
+                nav.Navigate(new IDEPage(new HTML_IDE()));
             }
         }
     }
