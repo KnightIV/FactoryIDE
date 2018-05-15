@@ -6,5 +6,11 @@ using System.Threading.Tasks;
 
 namespace FactoryIDE_Abstract.UIElements {
 
-    public abstract class UIRectangle : UIElement {}
+    public abstract class UIRectangle : UIElement {
+
+        public override string ToString()
+        {
+            return "Rectangle(text, width, height)";
+        }
+    }
 }
