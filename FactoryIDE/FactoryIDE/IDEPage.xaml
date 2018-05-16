@@ -9,7 +9,7 @@
       Title="IDEPage">
 
     <Grid Background="White">
-        <ComboBox Text="Select Component" Name="ComponentSelector" IsReadOnly="True" IsEditable="True" VerticalAlignment="Top" Margin="37,63,583,0" Height="32" Grid.Column="1">
+        <ComboBox SelectedValue="Content" Text="Select Component" Name="ComponentSelector" IsReadOnly="True" IsEditable="True" VerticalAlignment="Top" Margin="37,63,583,0" Height="32" Grid.Column="1">
             <ComboBoxItem Name="UIButton">Button</ComboBoxItem>
             <ComboBoxItem Name="UILabel">Label</ComboBoxItem>
             <ComboBoxItem Name="UIRectangle">Rectangle</ComboBoxItem>
@@ -18,9 +18,41 @@
 
         <Label Name="Content" HorizontalContentAlignment="Right" Height="25" Width="60" Margin="408,6,324,388">Contents</Label>
 
-        <ListBox Name="ComponentListBox" Margin="408,31,71,49" >
+        <ListBox Name="ComponentListBox" Margin="408,31,71,49" ItemsSource="{Binding Path=listBox}">
             <ListBoxItem Name="Button"></ListBoxItem>
         </ListBox>
+
+        <StackPanel Orientation="Horizontal" Height="30" Margin="67,133,583,267">
+            <Label>Content</Label>
+            <TextBox Name="ContentTextBox" Width="100"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="30" Margin="77,187,573,233">
+            <Label>Width</Label>
+            <TextBox Name="WidthTextBox" Width="110"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="30" Margin="77,222,623,198">
+            <Label>Height</Label>
+            <TextBox Name="HeightTextBox" Width="100"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="30" Margin="91,257,609,163">
+            <Label Content="Top"/>
+            <TextBox Name="TopTextBox" Width="100"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="30"  Margin="91,292,659,128">
+            <Label>Left</Label>
+            <TextBox Name="LeftTextBox" Width="100"></TextBox>
+        </StackPanel>
+
+        <Button Height="50" Margin="67,366,632,34" Click="AddComponent_Click">
+            Add Component
+        </Button>
+        <Button Height="50" Margin="194,366,509,34" Click="Compile_Click">
+            Compile
+        </Button>
 
     </Grid>
 </Page>
