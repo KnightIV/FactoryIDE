@@ -1,5 +1,4 @@
-﻿using FactoryIDE_Abstract.IDE;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -14,43 +13,79 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FactoryIDE_Abstract.UIElements;
 
-namespace FactoryIDE
-{
+using FactoryIDE_Abstract.IDE;
+
+namespace FactoryIDE {
+
     /// <summary>
     /// Interaction logic for IDEPage.xaml
     /// </summary>
-    public partial class IDEPage : Page
-    {
-        public string selectedComponent;
-        public IDE PageContent{ get; set; }
+    public partial class IDEPage : Page {
 
-        ObservableCollection<FactoryIDE_Abstract.UIElements.UIElement> listBox = new ObservableCollection<FactoryIDE_Abstract.UIElements.UIElement>();
-        public IDEPage(IDE pageContent)
-        {
+        private IDE ide;
+        private ObservableCollection<string> listBox = new ObservableCollection<string>();
+
+        public IDEPage(IDE ide) {
             InitializeComponent();
-            DataContext = this;
-            PageContent = pageContent;
-
-
-           
+            ComponentListBox.ItemsSource = listBox;
+            this.ide = ide;
         }
 
-        private void AddComponent_Click(object sender, RoutedEventArgs e)
-        {
-            string componentSelector = ComponentSelector.Text;
-            MessageBox.Show(componentSelector);
-           
+        private void AddComponent_Click(object sender, RoutedEventArgs e) {
+            string selectedComponent = ComponentSelector.Text;
+            bool added = true;
+
+            string content = ContentTextBox.Text;
+            int width, height, left, top;
+
+            // Some rudimentary error checking
+            if (!int.TryParse(WidthTextBox.Text, out width) || !int.TryParse(HeightTextBox.Text, out height) || !int.TryParse(LeftTextBox.Text, out left) || !int.TryParse(TopTextBox.Text, out top)) {
+                MessageBox.Show("Make sure all of your values were typed correctly.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            } else {
+                try {
+                    switch (selectedComponent) {
+                        case "Button":
+                            ide.AddButton(content, height, width, top, left);
+                            break;
+
+                        case "Label":
+                            ide.AddLabel(content, height, width, top, left);
+                            break;
+
+                        case "Rectangle":
+                            ide.AddRectangle(content, height, width, top, left);
+                            break;
+
+                        case "Text Box":
+                            ide.AddTextBox(content, height, width, top, left);
+                            break;
+
+                        default:
+                            MessageBox.Show("Please select a component to add first.", "Error", MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+                            break;
+                    }
+                } catch (NotImplementedException) {
+                    MessageBox.Show("This component is not supported in this language!", "Error", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                    added = false;
+                }
+
+                if (added) {
+                    listBox.Add(ide.Elements.Last().ToString());
+
+                    ContentTextBox.Text = String.Empty;
+                    WidthTextBox.Text = String.Empty;
+                    HeightTextBox.Text = String.Empty;
+                    LeftTextBox.Text = String.Empty;
+                    TopTextBox.Text = String.Empty;
+                }
+            }
         }
 
-        private void Compile_Click(object sender, RoutedEventArgs e)
-        {
-
+        private void Compile_Click(object sender, RoutedEventArgs e) {
+            throw new NotImplementedException();
         }
-
-      
-
-      
     }
 }
