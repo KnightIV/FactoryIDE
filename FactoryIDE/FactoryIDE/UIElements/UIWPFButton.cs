@@ -11,7 +11,7 @@ namespace FactoryIDE.UIElements
     {
         public override string Render()
         {
-            throw new NotImplementedException();
+            return $"new Button(){{Height = {Height} , Width = {Width}, Content = \"{Content}\"}}";
         }
     }
 }

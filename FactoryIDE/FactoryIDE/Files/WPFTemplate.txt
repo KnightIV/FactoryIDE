@@ -1,0 +1,29 @@
+using System;
+using System.Windows;
+using System.Windows.Controls;
+
+namespace ConsoleToWPF {
+
+    class Program {
+
+        [STAThread]
+        static void Main(string[] args) {
+            Application app = new Application {
+                MainWindow = new MainWindow()
+            };
+            app.MainWindow.Show();
+            app.Run();
+        }
+    }
+
+    public class Application : System.Windows.Application { }
+
+    public class MainWindow : Window {
+
+        public MainWindow() {
+            Canvas canvas = new Canvas();
+			%s
+            Content = canvas;
+        }
+    }
+}

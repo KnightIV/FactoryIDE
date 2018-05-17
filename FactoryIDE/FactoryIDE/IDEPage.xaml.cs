@@ -85,7 +85,7 @@ namespace FactoryIDE {
         }
 
         private void Compile_Click(object sender, RoutedEventArgs e) {
-            throw new NotImplementedException();
+            ide.Compile("sample");
         }
     }
 }
